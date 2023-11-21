@@ -70,6 +70,7 @@ public class Employee {
         this.hasVehicle = hasVehicle;
     }
 
+//    function to cap occupation rate as per requirements
     private double capOccupation(double occupationRate){
         if(occupationRate < 10)
             return 10;
