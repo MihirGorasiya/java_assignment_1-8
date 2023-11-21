@@ -18,7 +18,7 @@ public class Employee {
         this.birthYear = birthYear;
         this.age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
         this.monthlyIncome = monthlyIncome;
-        this.occupationRate = occupationRate;
+        this.occupationRate = capOccupation(occupationRate);
         this.hasVehicle = hasVehicle;
     }
 
@@ -58,7 +58,7 @@ public class Employee {
     }
 
     public void setOccupationRate(double occupationRate) {
-        this.occupationRate = occupationRate;
+        this.occupationRate = capOccupation(occupationRate);
     }
 
 //  has Vehicle getter setter
@@ -68,5 +68,14 @@ public class Employee {
 
     public void setHasVehicle(boolean hasVehicle) {
         this.hasVehicle = hasVehicle;
+    }
+
+    private double capOccupation(double occupationRate){
+        if(occupationRate < 10)
+            return 10;
+        else if (occupationRate > 100)
+            return 100;
+        else
+            return occupationRate;
     }
 }
