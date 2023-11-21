@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.vehicle.Vehicle;
+
 import java.util.Calendar;
 
 //Employee class initialization
@@ -10,10 +12,10 @@ public class Employee {
     private double monthlyIncome;
     private double occupationRate;
 
-    private boolean hasVehicle;
+    private Vehicle hasVehicle;
 
 
-    public Employee(String employeeName, int birthYear, double monthlyIncome, double occupationRate, boolean hasVehicle) {
+    public Employee(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle) {
         this.employeeName = employeeName;
         this.birthYear = birthYear;
         this.age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
@@ -63,11 +65,11 @@ public class Employee {
     }
 
 //  has Vehicle getter setter
-    public boolean isHasVehicle() {
+    public Vehicle isHasVehicle() {
         return hasVehicle;
     }
 
-    public void setHasVehicle(boolean hasVehicle) {
+    public void setHasVehicle(Vehicle hasVehicle) {
         this.hasVehicle = hasVehicle;
     }
 
