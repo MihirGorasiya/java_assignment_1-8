@@ -80,4 +80,8 @@ public class Employee {
         else
             return occupationRate;
     }
+// Get Base Yearly Income
+    public double baseYearlyIncome(){
+        return 12*monthlyIncome*occupationRate;
+    }
 }
