@@ -5,6 +5,9 @@ public class Manager extends Employee{
     private int totalTravelDay;
     private int totalClients;
 
+    final private double GAIN_FACTOR_CLIENT = 500;
+    final private double GAIN_FACTOR_TRAVEL = 100;
+
     Manager(String employeeName, int birthYear, double monthlyIncome, double occupationRate, boolean hasVehicle,int  totalTravelDay, int totalClients){
         super(employeeName,birthYear,monthlyIncome,occupationRate,hasVehicle);
         this.totalTravelDay = totalTravelDay;
@@ -27,6 +30,10 @@ public class Manager extends Employee{
 
     public void setTotalClients(int totalClients) {
         this.totalClients = totalClients;
+    }
+
+    public double annualIncome(){
+        return baseYearlyIncome()+(totalClients*GAIN_FACTOR_CLIENT)+(totalTravelDay*GAIN_FACTOR_TRAVEL);
     }
 
 
