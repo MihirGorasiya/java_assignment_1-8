@@ -20,6 +20,7 @@ public class Employee {
         this.monthlyIncome = monthlyIncome;
         this.occupationRate = capOccupation(occupationRate);
         this.hasVehicle = hasVehicle;
+        System.out.println("We have new employee: "+ employeeName);
     }
 
     //    name getter
