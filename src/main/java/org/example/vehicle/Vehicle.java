@@ -4,9 +4,9 @@ public class Vehicle {
     private String make;
     private String plate;
     private String color;
-    private int category;
+    private VehicleCategory category;
 
-    public Vehicle(String make, String plate, String color, int category) {
+    public Vehicle(String make, String plate, String color, VehicleCategory category) {
         this.make = make;
         this.plate = plate;
         this.color = color;
@@ -39,11 +39,11 @@ public class Vehicle {
     }
 
     //  category getter setter
-    public int getCategory() {
+    public VehicleCategory getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(VehicleCategory category) {
         this.category = category;
     }
 }
