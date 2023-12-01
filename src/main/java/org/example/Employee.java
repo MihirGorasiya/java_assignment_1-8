@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.contract.Contract;
 import org.example.vehicle.Vehicle;
 
 import java.util.Calendar;
@@ -13,7 +14,15 @@ public class Employee {
     private double occupationRate;
 
     private Vehicle hasVehicle;
+    private Contract contract;
 
+    public Contract getContract() {
+        return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
 
     public Employee(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle) {
         this.employeeName = employeeName;
@@ -85,5 +94,9 @@ public class Employee {
 // Get Base Yearly Income
     public double baseYearlyIncome(){
         return 12*monthlyIncome*occupationRate;
+    }
+
+    public void signContract(Contract contract){
+        this.contract = contract;
     }
 }
