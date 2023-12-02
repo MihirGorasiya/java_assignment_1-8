@@ -10,7 +10,27 @@ public class Manager extends Employee{
     final private double GAIN_FACTOR_CLIENT = 500;
     final private double GAIN_FACTOR_TRAVEL = 100;
 
-    Manager(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle, int  totalTravelDay, int totalClients){
+    public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay){
+        super(employeeName,birtYear, 0);
+        this.totalClients = totalClients;
+        this.totalTravelDay = totalTravelDay;
+    }
+    public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay, double occupationRate,Vehicle v){
+        super(employeeName,birtYear, occupationRate,v);
+        this.totalClients = totalClients;
+        this.totalTravelDay = totalTravelDay;
+    }
+    public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay,Vehicle v){
+        super(employeeName,birtYear, 0,v);
+        this.totalClients = totalClients;
+        this.totalTravelDay = totalTravelDay;
+    }
+    public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay, double occupationRate){
+        super(employeeName,birtYear, occupationRate);
+        this.totalClients = totalClients;
+        this.totalTravelDay = totalTravelDay;
+    }
+    public Manager(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle, int  totalTravelDay, int totalClients){
         super(employeeName,birthYear,monthlyIncome,occupationRate,hasVehicle);
         this.totalTravelDay = totalTravelDay;
         this.totalClients = totalClients;

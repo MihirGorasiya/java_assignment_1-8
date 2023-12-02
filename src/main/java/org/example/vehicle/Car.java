@@ -2,20 +2,20 @@ package org.example.vehicle;
 
 public class Car extends Vehicle{
 
-    private CarGear gear;
+    private Gear gear;
     private CarType type;
 
-    Car(String make, String plate, String color, VehicleCategory category, CarGear gear, CarType type){
+    public Car(String make, String plate, String color, VehicleType category, Gear gear, CarType type){
         super(make,  plate,  color,  category);
         this.gear = gear;
         this.type = type;
     }
     // Gear Getter/ Setter
-    public CarGear getGear() {
+    public Gear getGear() {
         return gear;
     }
 
-    public void setGear(CarGear gear) {
+    public void setGear(Gear gear) {
         this.gear = gear;
     }
 
