@@ -24,6 +24,17 @@ public class Employee {
         this.contract = contract;
     }
 
+    public Employee(String employeeName, int birtYear, double occupationRate, Vehicle v){
+        this.employeeName = employeeName;
+        this.birthYear = birtYear;
+        this.occupationRate = occupationRate;
+        this.hasVehicle = v;
+    }
+    public Employee(String employeeName, int birtYear, double occupationRate){
+        this.employeeName = employeeName;
+        this.birthYear = birtYear;
+        this.occupationRate = occupationRate;
+    }
     public Employee(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle) {
         this.employeeName = employeeName;
         this.birthYear = birthYear;

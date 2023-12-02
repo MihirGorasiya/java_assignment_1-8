@@ -3,7 +3,7 @@ package org.example.vehicle;
 public class Motorcycle extends Vehicle{
     private boolean sideCar;
 
-    Motorcycle(String make, String plate, String color, VehicleCategory category, boolean sideCar){
+    public Motorcycle(String make, String plate, String color, VehicleType category, boolean sideCar){
         super(make, plate, color, category);
         this.sideCar = sideCar;
     }
