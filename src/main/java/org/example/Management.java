@@ -1,6 +1,8 @@
 package org.example;
 import org.example.vehicle.*;
-
+import org.example.contract.Contract;
+import org.example.contract.Permanent;
+import org.example.contract.Temporary;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class Management {
     // Manager: name, birthYear, nbClients, nbTravelDays, rate
     // Programmer: name, birthYear, nbProjects, rate
     // Tester: name, birthYear, nbBugs, rate
-    void hireTest1() {
+    public void hireTest1() {
         employees.add(new Manager("Serge", 1985, 30, 4));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80));
         employees.add(new Programmer("Paul", 1993, 3, 75));
@@ -38,7 +40,7 @@ public class Management {
     // Manager: name, birthYear, nbClients, nbTravelDays, rate, employeeVehicle
     // Programmer: name, birthYear, nbProjects, rate, employeeVehicle
     // Tester: name, birthYear, nbBugs, rate, employeeVehicle
-    void hireTest2() {
+    public void hireTest2() {
         employees.clear();
         employees.add(new Manager("Serge", 1985, 30, 4, vt1));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80, vt2));
@@ -53,7 +55,7 @@ public class Management {
         }
     }
 
-    void hireTest3() {
+    public void hireTest3() {
         employees.clear();
         Employee Serge = new Manager("Serge", 1985, 30, 4, vt1);
         Employee Cindy = new Manager("Cindy", 1974, 20, 6, 80, vt2);

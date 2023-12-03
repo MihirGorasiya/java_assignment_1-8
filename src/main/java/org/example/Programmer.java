@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.vehicle.Car;
+import org.example.vehicle.Motorcycle;
 import org.example.vehicle.Vehicle;
 
 public class Programmer extends Employee{
@@ -14,6 +16,7 @@ public class Programmer extends Employee{
     public Programmer(String employeeName, int birthYear, int totalProjects, Vehicle v){
         super(employeeName,birthYear,0,v);
         this.totalProjects = totalProjects;
+
     }
     public Programmer(String employeeName, int birthYear, int totalProjects, double occupationRate){
         super(employeeName,birthYear,occupationRate);

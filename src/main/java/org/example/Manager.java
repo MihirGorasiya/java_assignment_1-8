@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.contract.Contract;
+import org.example.vehicle.Car;
+import org.example.vehicle.Motorcycle;
 import org.example.vehicle.Vehicle;
 
 public class Manager extends Employee{
@@ -19,11 +22,13 @@ public class Manager extends Employee{
         super(employeeName,birtYear, occupationRate,v);
         this.totalClients = totalClients;
         this.totalTravelDay = totalTravelDay;
+
     }
     public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay,Vehicle v){
         super(employeeName,birtYear, 0,v);
         this.totalClients = totalClients;
         this.totalTravelDay = totalTravelDay;
+
     }
     public Manager(String employeeName, int birtYear, int totalClients, int totalTravelDay, double occupationRate){
         super(employeeName,birtYear, occupationRate);

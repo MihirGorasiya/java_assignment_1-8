@@ -29,11 +29,16 @@ public class Employee {
         this.birthYear = birtYear;
         this.occupationRate = occupationRate;
         this.hasVehicle = v;
+        age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
+        System.out.println("We have a new employee: "+employeeName+", a "+this.getClass().getSimpleName()+".\n");
     }
     public Employee(String employeeName, int birtYear, double occupationRate){
         this.employeeName = employeeName;
         this.birthYear = birtYear;
         this.occupationRate = occupationRate;
+        age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
+        System.out.println("We have a new employee: "+employeeName+", a "+this.getClass().getSimpleName()+".\n");
+
     }
     public Employee(String employeeName, int birthYear, double monthlyIncome, double occupationRate, Vehicle hasVehicle) {
         this.employeeName = employeeName;
@@ -42,7 +47,7 @@ public class Employee {
         this.monthlyIncome = monthlyIncome;
         this.occupationRate = capOccupation(occupationRate);
         this.hasVehicle = hasVehicle;
-        System.out.println("We have new employee: "+ employeeName);
+        System.out.println("We have a new employee: "+employeeName+", a "+this.getClass().getSimpleName()+".\n");
     }
 
     //    name getter
@@ -109,5 +114,18 @@ public class Employee {
 
     public void signContract(Contract contract){
         this.contract = contract;
+    }
+
+    public String contractInfo(){
+        String marriedStatus = "";
+        int noOfChildren = 0;
+        int workDays = 0;
+        double salary = 0;
+        String position = this.getClass().getSimpleName();
+
+        String ans = employeeName+" is a " + position  +". he is "+ marriedStatus +" and he/she has "+ noOfChildren+" children.\n" +
+                "He/She has worked for "+workDays+" days and upon contract his/her monthly\n" +
+                "salary is "+salary+".";
+        return ans;
     }
 }

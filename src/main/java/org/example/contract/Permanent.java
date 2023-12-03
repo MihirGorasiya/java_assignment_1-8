@@ -6,8 +6,17 @@ public class Permanent extends Contract{
     private int workedDays;
     private double fixedMonthlySalary;
     private int children;
-    private boolean civilStatus;
+    private boolean isMarried;
     private double premium;
+
+
+    public Permanent(int children, boolean isMarried, double fixedMonthlySalary,double premium, int workedDays) {
+        this.workedDays = workedDays;
+        this.fixedMonthlySalary = fixedMonthlySalary;
+        this.children = children;
+        this.isMarried = isMarried;
+        this.premium = premium;
+    }
 
     public int getWorkedDays() {
         return workedDays;
@@ -33,12 +42,12 @@ public class Permanent extends Contract{
         this.children = children;
     }
 
-    public boolean isCivilStatus() {
-        return civilStatus;
+    public boolean isMarried() {
+        return isMarried;
     }
 
-    public void setCivilStatus(boolean civilStatus) {
-        this.civilStatus = civilStatus;
+    public void setMarried(boolean married) {
+        this.isMarried = married;
     }
 
     public double getPremium() {
