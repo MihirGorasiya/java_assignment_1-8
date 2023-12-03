@@ -6,6 +6,11 @@ public class Temporary extends Contract{
     private double hourlyWage;
     private double completedHours;
 
+    public Temporary(double hourlyWage, double completedHours) {
+        this.hourlyWage = hourlyWage;
+        this.completedHours = completedHours;
+    }
+
     public double getHourlyWage() {
         return hourlyWage;
     }
