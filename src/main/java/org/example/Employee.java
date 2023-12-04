@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.contract.Contract;
+import org.example.contract.Permanent;
+import org.example.contract.Temporary;
 import org.example.vehicle.Car;
 import org.example.vehicle.Motorcycle;
 import org.example.vehicle.Vehicle;
@@ -155,10 +157,21 @@ public class Employee {
         int workDays = 0;
         double salary = 0;
         String position = this.getClass().getSimpleName();
-
-        String ans = employeeName+" is a " + position  +". he is "+ marriedStatus +" and he/she has "+ noOfChildren+" children.\n" +
-                "He/She has worked for "+workDays+" days and upon contract his/her monthly\n" +
-                "salary is "+salary+".";
+        Contract cur;
+        String ans = "";
+        if(contract instanceof Permanent){
+            cur = (Permanent)contract;
+            noOfChildren = ((Permanent) cur).getChildren();
+            marriedStatus = ((Permanent) cur).isMarried() ? "married" : "not married";
+            workDays = ((Permanent) cur).getWorkedDays();
+            salary = ((Permanent) cur).getFixedMonthlySalary();
+            ans = employeeName+" is a " + position  +". he is "+ marriedStatus +" and he/she has "+ noOfChildren+" children.\n" +
+                    "He/She has worked for "+workDays+" days and upon contract his/her monthly\n" +
+                    "salary is "+salary+".\n";
+        }else if(contract instanceof Temporary){
+            cur = (Temporary)contract;
+            ans = "Paul is a "+ position +". he is a temporary employee with "+((Temporary) cur).getHourlyWage()+"\nhourly salary and he has worked for "+((Temporary) cur).getCompletedHours()+" hours.\n";
+        }
         return ans;
     }
 }
