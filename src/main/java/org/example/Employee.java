@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.contract.Contract;
+import org.example.vehicle.Car;
+import org.example.vehicle.Motorcycle;
 import org.example.vehicle.Vehicle;
 
 import java.util.Calendar;
@@ -27,7 +29,7 @@ public class Employee {
     public Employee(String employeeName, int birtYear, double occupationRate, Vehicle v){
         this.employeeName = employeeName;
         this.birthYear = birtYear;
-        this.occupationRate = occupationRate;
+        this.occupationRate = capOccupation(occupationRate);
         this.hasVehicle = v;
         age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
         System.out.println("We have a new employee: "+employeeName+", a "+this.getClass().getSimpleName()+".\n");
@@ -35,7 +37,7 @@ public class Employee {
     public Employee(String employeeName, int birtYear, double occupationRate){
         this.employeeName = employeeName;
         this.birthYear = birtYear;
-        this.occupationRate = occupationRate;
+        this.occupationRate = capOccupation(occupationRate);
         age = Calendar.getInstance().get(Calendar.YEAR) - birthYear;
         System.out.println("We have a new employee: "+employeeName+", a "+this.getClass().getSimpleName()+".\n");
 
@@ -114,6 +116,37 @@ public class Employee {
 
     public void signContract(Contract contract){
         this.contract = contract;
+    }
+
+    @Override
+    public String toString() {
+        String str = "Name: "+getEmployeeName() +", a "+getClass().getSimpleName() +"\n" +
+                "Age: "+getAge()+"\n" +
+                "Employee has a "+isHasVehicle().getClass().getSimpleName()+"\n" +
+                "- make: "+ isHasVehicle().getMake()+"\n" +
+                "- plate: "+isHasVehicle().getPlate()+"\n" +
+                "- color: "+isHasVehicle().getColor()+"\n" +
+                "- category: "+isHasVehicle().getCategory()+"\n";
+        if (isHasVehicle().getClass().getSimpleName().equals("Car")){
+            Car c = (Car) isHasVehicle();
+            str+= "- gear type: "+c.getGear()+"\n";
+            str+= "- type: Sport "+c.getType()+"\n";
+        }
+        if (isHasVehicle().getClass().getSimpleName().equals("Motorcycle")){
+            Motorcycle m = (Motorcycle) isHasVehicle();
+            if (m.isSideCar()){
+                str+= "- with sidecar\n";
+            }else{
+                str+= "- without sidecar\n";
+            }
+        }
+        if (getClass().getSimpleName().equals("Manager")){
+            str+= getEmployeeName()+" has an Occupation rate: "+getOccupationRate()+" He/She travelled 6 days and\n" +
+                    "has brought 30 new clients.\n" +
+                    "His/Her estimated annual income is ";
+        }
+
+        return str;
     }
 
     public String contractInfo(){
